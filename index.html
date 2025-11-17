@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>النجم داتا - منشئ السيرة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="welcomeBox" class="welcome">
+    <h1>أهلاً بك في النجم داتا</h1>
+    <p>سيتم الانتقال بعد 5 ثوانٍ...</p>
+  </div>
+
+  <main id="mainContent" style="display:none;">
+    <form id="cvForm">
+      <h2>ادخل بياناتك الشخصية</h2>
+      <label>الاسم الكامل:</label>
+      <input type="text" id="name">
+
+      <label>الصورة الشخصية (رابط أو رفع):</label>
+      <input type="text" id="photoUrl" placeholder="رابط الصورة">
+      <input type="file" id="photoFile" accept="image/*">
+
+      <label>السن:</label>
+      <input type="number" id="age">
+
+      <label>المهنة:</label>
+      <input type="text" id="job">
+
+      <label>التعليم:</label>
+      <input type="text" id="edu">
+
+      <label>الرقم القومي:</label>
+      <input type="text" id="nid">
+
+      <label>التقديم إلى:</label>
+      <input type="text" id="applyTo">
+
+      <h3>الحسابات ووسائل التواصل</h3>
+      <div id="socials"></div>
+      <div class="row">
+        <input type="text" id="s_name" placeholder="المنصة">
+        <input type="text" id="s_link" placeholder="الرابط">
+        <button type="button" id="addSocial">أضف</button>
+      </div>
+
+      <h3>خيارات الخط:</h3>
+      <label>حجم الخط:</label>
+      <input type="range" min="12" max="28" value="16" id="fontSize">
+      <label>لون الخط:</label>
+      <input type="color" value="#111111" id="fontColor">
+      <label>شكل الخط:</label>
+      <select id="fontFamily">
+        <option value="Tahoma, Arial, sans-serif">Tahoma</option>
+        <option value="'Courier New', monospace">Monospace</option>
+        <option value="Georgia, serif">Serif</option>
+      </select>
+
+      <button type="button" id="createCv">إنشاء السيرة</button>
+      <button type="button" id="saveData">حفظ</button>
+      <button type="button" id="loadData">تحميل</button>
+      <button type="button" id="clearData">مسح الكل</button>
+    </form>
+
+    <div id="cvContainer" class="cv-box"></div>
+    <div class="cv-actions">
+      <button id="downloadPdf">تحميل PDF</button>
+      <button id="genQR">إنشاء QR</button>
+      <div id="qrArea"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</body>
+</html>
